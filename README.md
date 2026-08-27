@@ -8,7 +8,6 @@ Dockerビルド
 docker compose up -d --build
 
 ## 使用技術
-
 - PHP
 - Laravel
 - MySQL
