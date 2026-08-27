@@ -16,6 +16,6 @@ docker compose up -d --build
 - Docker
 
 ## ER図
-![ER図](./test-laravel/ER_diagram.png)
+![ER図](./docs/ER_diagram.png)
 
 ## URL
