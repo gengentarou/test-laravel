@@ -22,13 +22,37 @@ $composer install
 
 4. .envファイルの設定
 
+.envファイルを作成し、データベースの接続情報を設定します。
+
+```bash
+DB_CONNECTION=mysql DB_HOST=mysql DB_PORT=3306 DB_DATABASE=laravel_db DB_USERNAME=laravel_user DB_PASSWORD=laravel_pass
+```
+
 5. アプリケーションキー
+
+```bash
+$php artisan key:generate
+```
 
 6. マイグレーションの実行
 
+```bash
+$php artisan migrate
+```
+
 7. シーディングの実行
 
+```bash
+php artisan db:seed
+```
+
+※ categoriesテーブルにお問い合わせの種類を5件登録します。
+
 8. アプリケーションへのアクセス
+
+ブラウザから以下にアクセスします。
+
+http://localhost/
 
 
 ## 使用技術（実行環境）
