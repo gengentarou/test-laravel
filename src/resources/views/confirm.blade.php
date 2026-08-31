@@ -50,8 +50,16 @@
     </div>
 
     <div class="contact-form__button">
-        <form class="confirm-form" action="/thanks" method="get">
-
+        <form class="confirm-form" action="/thanks" method="post">
+            @csrf
+            <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
+            <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
+            <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
+            <input type="hidden" name="email" value="{{ $contact['email'] }}">
+            <input type="hidden" name="tel" value="{{ $contact['tel'] }}"> <input type="hidden" name="address" value="{{ $contact['address'] }}">
+            <input type="hidden" name="building" value="{{ $contact['building'] ?? '' }}">
+            <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
+            <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
             <button
                 class="confirm-form__button-submit"
                 type="submit"
@@ -60,7 +68,18 @@
             </button>
         </form>
 
-        <form class="confirm-form" action="/" method="post"> @csrf
+        <form class="confirm-form" action="/" method="post">
+            @csrf
+            <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
+            <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
+            <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
+            <input type="hidden" name="email" value="{{ $contact['email'] }}">
+            <input type="hidden" name="tel" value="{{ $contact['tel'] }}">
+            <input type="hidden" name="address" value="{{ $contact['address'] }}">
+            <input type="hidden" name="building" value="{{ $contact['building'] ?? '' }}">
+            <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
+            <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
+
             <button
                 class="confirm-form__button-edit"
                 type="submit"

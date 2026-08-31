@@ -1,9 +1,19 @@
-@extends('layouts.app')
+<div class="thanks_content">
 
-@section('content')
+    <div class="thanks__background">
+        <p>Thank you</p>
+    </div>
 
-    <h2>Thanks</h2>
+    <div class="thanks__message">
+        <p>お問い合わせありがとうございました</p>
 
-    <!-- サンクスページの内容 -->
+        <form action="/" method="get">
+            <button
+                class="thanks-content__button-submit"
+                type="submit"
+            >HOME</button>
+        </form>
 
-@endsection
+    </div>
+
+</div>

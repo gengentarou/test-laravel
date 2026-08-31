@@ -3,18 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Category;
+use App\Models\Contact;
+
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
+        $contact = $request->all();
 
-        return view('index', compact('categories'));
+        if (isset($contact['tel']))
+        {
+        $tel = explode('-', $contact['tel']);
+        $contact['tel_first'] = $tel[0];
+        $contact['tel_second'] = $tel[1];
+        $contact['tel_third'] = $tel[2];
+        }
+
+        return view('index', compact('categories', 'contact'));
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $contact = $request->only([
             'last_name',
@@ -35,8 +47,28 @@ class ContactController extends Controller
         return view('confirm', compact('contact', 'category'));
     }
 
+    //お問い合わせ内容の保存
+    public function store(Request $request)
+    {
+        Contact::create([
+            'last_name' => $request->last_name,
+            'first_name' => $request->first_name,
+            'gender' => $request->gender,
+            'email' => $request->email,
+            'tel' => $request->tel,
+            'address' => $request->address,
+            'building' => $request->building,
+            'category_id' => $request->category_id,
+            'detail' => $request->detail,
+        ]);
+
+        return view('thanks');
+    }
+
+    //サンクスページへの移動
     public function thanks()
     {
         return view('thanks');
     }
+
 }
