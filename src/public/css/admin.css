@@ -1,0 +1,130 @@
+.admin_content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/* Adminタイトル */
+.admin_content .section__title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin_content .section__title h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+/* 検索フォーム */
+.admin-search {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.admin-search form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* キーワード */
+.admin-search__keyword {
+    flex: 2;
+}
+
+.admin-search__keyword input {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #8b7b6d;
+}
+
+/* 性別 */
+.admin-search__gender {
+    flex: 1;
+}
+
+.admin-search__gender select {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #8b7b6d;
+}
+
+/* お問い合わせ種類 */
+.admin-search__category {
+    flex: 1.5;
+}
+
+.admin-search__category select {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #8b7b6d;
+}
+
+/* 日付 */
+.admin-search__date {
+    flex: 1;
+}
+
+.admin-search__date input {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #8b7b6d;
+}
+
+/* 検索・リセットボタン */
+.admin-search__button {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-search__button button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8b7b6d;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* データ一覧 */
+.admin-table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.admin-table__item {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 2fr 1.5fr 80px;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.admin-table__item button {
+    padding: 7px 15px;
+    border: 1px solid #8b7b6d;
+    background-color: transparent;
+    color: #8b7b6d;
+    cursor: pointer;
+}
+
+/* ページネーション */
+.admin_content nav {
+    margin-top: 30px;
+    text-align: center;
+}
+

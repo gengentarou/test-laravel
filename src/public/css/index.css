@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f3f7fa;
+    color: #8b7b6d;
+    font-family: serif;
+}
+
+.contact_content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: transparent;
+    min-height: calc(100vh - 70px);
+}
+
+.section__title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section__title h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form>div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-form>div>label:first-child {
+    width: 180px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #8b7b6d;
+    flex-shrink: 0;
+}
+
+.required {
+    color: #e88b8b;
+    margin-left: 2px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+    border: none;
+    background-color: #f5f5f5;
+    padding: 10px;
+    color: #8b7b6d;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #c8c1bb;
+}
+
+.contact-form__last-name,
+.contact-form__first-name {
+    width: 180px;
+}
+
+.contact-form__first-name {
+    margin-left: 20px;
+}
+
+/* 性別 */
+.contact-form__gender {
+    align-items: flex-start;
+}
+
+.contact-form__gender>label:first-child {
+    width: 180px;
+    padding-top: 8px;
+    flex-shrink: 0;
+}
+
+.contact-form__gender>label:not(:first-child) {
+    width: auto;
+    padding-top: 8px;
+    margin-left: 10px;
+    margin-right: 25px;
+    white-space: nowrap;
+}
+
+.contact-form__gender>label:nth-child(2) {
+    margin-left: 0;
+}
+
+.contact-form__gender input[type="radio"] {
+    margin-right: 5px;
+}
+
+.contact-form__mail-input,
+.contact-form__address-input,
+.contact-form__building-input {
+    width: 500px;
+}
+
+.contact-form__tel-first {
+    width: 90px;
+}
+
+.contact-form__tel-second {
+    width: 90px;
+    margin-left: 10px;
+}
+
+.contact-form__tel-third {
+    width: 90px;
+    margin-left: 10px;
+}
+
+.contact-form__category-select {
+    width: 220px;
+}
+
+.contact-form__detail {
+    align-items: flex-start !important;
+}
+
+.contact-form__detail-input {
+    width: 500px;
+    height: 120px;
+    resize: none;
+}
+
+.error-message,
+.contact-form p {
+    color: #d9534f;
+    font-size: 12px;
+    margin: 5px 0 0 10px;
+}
+
+.contact-form__button {
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.contact-form__button-submit {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    background-color: #8b7b6d;
+    color: #fff;
+    cursor: pointer;
+}

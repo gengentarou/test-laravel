@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+@endsection
+
 @section('content')
+
 <div class="contact_content">
     <div class="section__title">
         <h2>Contact</h2>
@@ -11,7 +16,7 @@
 
         <!-- お名前 -->
         <div class="contact-form__name">
-            <label>お名前※</label>
+            <label>お名前<span class="required">※</span></label>
 
             <input class="contact-form__last-name"
                 type="text"
@@ -42,7 +47,7 @@
 
         <!-- 性別 -->
         <div class="contact-form__gender">
-            <label>性別※</label>
+            <label>性別<span class="required">※</span></label>
 
             <label>
                 <input class="contact-form__gender-man"
@@ -87,7 +92,7 @@
 
         <!-- メールアドレス -->
         <div class="contact-form__mail">
-            <label for="email">メールアドレス※</label>
+            <label for="email">メールアドレス<span class="required">※</span></label>
 
             <input class="contact-form__mail-input"
                 type="email"
@@ -106,51 +111,37 @@
 
         <!-- 電話番号 -->
         <div class="contact-form__tel">
-            <label for="tel">電話番号※</label>
+            <label for="tel">電話番号<span class="required">※</span></label>
 
             <input class="contact-form__tel-first"
                 type="text"
                 name="tel_first"
-                @if(isset($contact['tel_first']))
-                    value="{{ $contact['tel_first'] }}"
-                @endif
+                value="{{ old('tel_first', $contact['tel_first'] ?? '') }}"
                 placeholder="080"
             >
             -
             <input class="contact-form__tel-second"
                 type="text"
                 name="tel_second"
-                @if(isset($contact['tel_second']))
-                    value="{{ $contact['tel_second'] }}"
-                @endif
+                value="{{ old('tel_second', $contact['tel_second'] ?? '') }}"
                 placeholder="1234"
             >
             -
             <input class="contact-form__tel-third"
                 type="text"
                 name="tel_third"
-                @if(isset($contact['tel_third']))
-                    value="{{ $contact['tel_third'] }}"
-                @endif
+                value="{{ old('tel_third', $contact['tel_third'] ?? '') }}"
                 placeholder="5678"
             >
 
             @error('tel_first')
-                <p>{{ $message }}</p>
-            @enderror
-
-            @error('tel_second')
-                <p>{{ $message }}</p>
-            @enderror
-
-            @error('tel_third')
-                <p>{{ $message }}</p>
+                <p class="error-message">{{ $message }}</p>
             @enderror
         </div>
 
         <!-- 住所 -->
         <div class="contact-form__address">
-            <label for="address">住所※</label>
+            <label for="address">住所<span class="required">※</span></label>
 
             <input class="contact-form__address-input"
                 type="text"
@@ -184,7 +175,7 @@
 
         <!-- お問い合わせの種類 -->
         <div class="contact-form__category">
-            <label for="category_id">お問い合わせの種類※</label>
+            <label for="category_id">お問い合わせの種類<span class="required">※</span></label>
 
             <select class="contact-form__category-select"
                 id="category_id"
@@ -217,7 +208,7 @@
 
         <!-- お問い合わせ内容 -->
         <div class="contact-form__detail">
-            <label for="detail">お問い合わせ内容※</label>
+            <label for="detail">お問い合わせ内容<span class="required">※</span></label>
 
             <textarea class="contact-form__detail-input"
                 id="detail"

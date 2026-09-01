@@ -1,12 +1,23 @@
 @extends('layouts.app')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+@endsection
+
+@section('header-nav')
+    <form action="/logout" method="post">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+@endsection
+
 @section('content')
 
-<div class="admin_content">
+
+
     <div class="section__title">
         <h2>Admin</h2>
     </div>
-
 
 <div class="admin-search">
 
